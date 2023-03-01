@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    font-family: 'Shadows Into Light', cursive,sans-serif;
+    overflow-x: hidden;
+}
+
+/* navbar */
+nav{
+    display: flex;
+    background-color: aquamarine;
+    justify-content: space-around;
+    padding: 20px 0;
+    color: green;
+    text-shadow: 2px 1px 1px grey;
+}
+nav .logo{
+    font-family:'Abril Fatface', cursive ;
+    letter-spacing: 10px;
+    font-size: 1.5em;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+    margin-right: 5px;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: green;
+    font-size: 0.8em;
+}
+nav ul li a:hover{
+color: aliceblue;
+}
+/* humbergur menu */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    left: -5px;
+    top: -3px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+
+}
+.menu-toggle span{
+display: block;
+width: 28px;
+height: 3px;
+background-color: green; 
+border-radius: 3px;
+transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(3){
+    background-color: white;
+}
+.menu-toggle span:nth-child(2){
+    background-color: white;
+    transform-origin:0 0  ;
+}
+.menu-toggle span:nth-child(4){
+    background-color: white;
+    transform-origin:0 100%  ;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: white;
+transform: rotate(-45deg) translate(0 , -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+transform: scale(0);
+}
+
+
+
+/* responsif */
+/* ukuran tablet */
+@media screen and (max-width:786px) {
+    nav ul{
+        width: 50%;
+    }
+    
+}
+/* ukuran mobile */
+@media screen and (max-width:576px) {
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width:80% ;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        z-index: -1;
+        background-color: aquamarine;
+        transform: translatex(100%);
+        transition: all 1s;
+        opacity: 0;
+        
+    }
+    
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* end navbar */
+
+/* content */
+
+.content{
+    justify-content: center;
+    align-items: center;
+   text-align: center;
+   margin: 25px;
+   width: 50%;
+   height: 200px;
+   /* Atur */
+   position: relative;
+}
